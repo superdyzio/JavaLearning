@@ -13,16 +13,16 @@ public class VariablesQuestions {
         int variable1 = 2;
         final int variable4 = 2;
 
-        //1.
+        //1. - 2
         //System.out.println(variable1); //What will be printed?
 
-        //2.
+        //2. - instance variable cannot be referenced from static context
         //System.out.println(variable2); //What will be printed?
 
-        //3.
+        //3. - 0
         //System.out.println(variable3); //What will be printed?
 
-        //4.
+        //4. - final value cannot be modified
         //System.out.println(variable4++); //What will be printed?
     }
 }

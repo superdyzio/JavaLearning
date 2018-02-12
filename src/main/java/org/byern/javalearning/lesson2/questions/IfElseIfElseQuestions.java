@@ -5,10 +5,12 @@ package org.byern.javalearning.lesson2.questions;
  */
 public class IfElseIfElseQuestions {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //System.out.println(new String("test") == "test"); //What will be printed?
+        //false - "new" creates new instance of a string
 
         String test = "test";
         //System.out.println(test == "test"); //What will be printed?
+        //true - same instance of string is reused here
     }
 }
