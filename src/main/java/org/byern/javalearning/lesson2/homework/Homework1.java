@@ -1,10 +1,11 @@
 package org.byern.javalearning.lesson2.homework;
 
+import java.util.Scanner;
+
 /**
  * Created by ByerN on 21.02.2017.
  */
 public class Homework1 {
-
     /*
      * There are two circles.
      *
@@ -30,6 +31,42 @@ public class Homework1 {
      *
      */
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int x1;
+        int y1;
+        int r1;
+        int x2;
+        int y2;
+        int r2;
+
+        System.out.println("Provide x, y and r for first circle:");
+        x1 = scanner.nextInt();
+        y1 = scanner.nextInt();
+        r1 = scanner.nextInt();
+
+        System.out.println("Provide x, y and r for second circle:");
+        x2 = scanner.nextInt();
+        y2 = scanner.nextInt();
+        r2 = scanner.nextInt();
+
+        double distanceBetweenCenters = getDistanceBetweenCenters(x1, y1, x2, y2);
+
+        if (distanceBetweenCenters < r1 + r2) {
+            System.out.println(
+                    checkIfCollisionIsInclusive(distanceBetweenCenters, r1, r2) ?
+                            "Inclusive collision detected!" :
+                            "Exclusive collision detected!"
+            );
+        } else {
+            System.out.println("Collision not detected.");
+        }
     }
 
+    private static double getDistanceBetweenCenters(int x1, int y1, int x2, int y2) {
+        return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+    }
+
+    private static boolean checkIfCollisionIsInclusive(double distance, int r1, int r2) {
+        return distance + r1 <= r2 || distance + r2 <= r1;
+    }
 }
